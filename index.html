@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>後寮國小六年甲班 🐾 萌貓校園天地</title>
+  
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #60a5fa;
+      --primary-dark: #1d4ed8;
+      --secondary: #f59e0b;
+      --secondary-light: #fef3c7;
+      --accent: #10b981;
+      --cat-orange: #fb923c;
+      --cat-peach: #fed7aa;
+      --cat-pink: #f472b6;
+      --cat-softpink: #fce7f3;
+      --bg-cream: #faf7f2;
+      --surface: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #f1e5d8;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 4px 12px rgba(245, 158, 11, 0.06);
+      --shadow-md: 0 12px 30px -6px rgba(251, 146, 60, 0.15), 0 8px 14px -6px rgba(37,99,235,0.06);
+      --shadow-lg: 0 22px 42px -10px rgba(15,23,42,0.14);
+      --transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.68;
+      overflow-x: hidden;
+      background-image: radial-gradient(#fed7aa 0.75px, transparent 0.75px);
+      background-size: 24px 24px;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background: linear-gradient(90deg, #ff7e5f, #feb47b, #f472b6);
+      color: #ffffff;
+      font-size: 0.92rem;
+      padding: 10px 20px;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 10px rgba(255, 126, 95, 0.25);
+    }
+
+    .top-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 2px dashed #fed7aa;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon-wrap {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, #fb923c, #f97316);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px rgba(249, 115, 22, 0.35);
+      transform: rotate(-3deg);
+      transition: var(--transition);
+    }
+
+    .brand:hover .brand-icon-wrap {
+      transform: rotate(6deg) scale(1.08);
+    }
+
+    .brand-cat-face {
+      width: 42px;
+      height: 42px;
+    }
+
+    .brand-text h1 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+
+    .brand-text p {
+      font-size: 0.78rem;
+      color: #ea580c;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 800;
+      padding: 9px 16px;
+      border-radius: var(--radius-full);
+      transition: var(--transition);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ea580c;
+      background-color: #fff7ed;
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, #fb923c, #ea580c) !important;
+      color: white !important;
+      box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 10px 22px rgba(249, 115, 22, 0.45);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      color: #ea580c;
+      cursor: pointer;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      padding: 85px 0 95px;
+      background: radial-gradient(circle at 10% 20%, #fffbf5 0%, #fff1df 55%, #ffe6eb 100%);
+      overflow: hidden;
+      border-bottom: 3px dashed #fed7aa;
+    }
+
+    /* Animated background elements */
+    .floating-paw {
+      position: absolute;
+      color: rgba(251, 146, 60, 0.15);
+      font-size: 2.5rem;
+      pointer-events: none;
+      animation: floatPaw 6s infinite ease-in-out;
+    }
+
+    .fp-1 { top: 12%; left: 4%; animation-duration: 7s; }
+    .fp-2 { bottom: 15%; left: 32%; animation-duration: 8.5s; font-size: 1.8rem; }
+    .fp-3 { top: 18%; right: 42%; animation-duration: 6s; font-size: 3rem; }
+    .fp-4 { bottom: 20%; right: 5%; animation-duration: 9s; font-size: 2.2rem; }
+
+    @keyframes floatPaw {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-16px) rotate(14deg); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-welcome-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: #ffffff;
+      border: 2px solid #fed7aa;
+      color: #ea580c;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 900;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+    }
+
+    .hero-title {
+      font-size: 3.4rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title .highlight {
+      background: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #2563eb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.18rem;
+      color: #475569;
+      margin-bottom: 34px;
+      font-weight: 600;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: var(--radius-full);
+      font-size: 1.05rem;
+      font-weight: 900;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #fb923c, #ea580c);
+      color: #ffffff;
+      box-shadow: 0 10px 24px -3px rgba(249, 115, 22, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 28px -3px rgba(249, 115, 22, 0.55);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #ea580c;
+      border: 2px solid #fed7aa;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      background-color: #fff7ed;
+      border-color: #fb923c;
+      transform: translateY(-3px);
+    }
+
+    /* VIP Hero QR Code Card with Super Kawaii Peeking Cat */
+    .hero-qr-showcase {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding-top: 85px; /* Room for the big kawaii cat */
+    }
+
+    /* Super Kawaii Peeking Mochi Cat with Animated Ears & Blinking Eyes */
+    .kawaii-peeking-cat {
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .cat-dialogue-tag {
+      background: #ffffff;
+      color: #ea580c;
+      font-weight: 900;
+      font-size: 0.88rem;
+      padding: 6px 18px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 6px 16px rgba(249, 115, 22, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 2px;
+      border: 2px solid #fed7aa;
+      white-space: nowrap;
+      animation: catHop 2.4s infinite ease-in-out;
+    }
+
+    @keyframes catHop {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .peeking-cat-svg {
+      width: 175px;
+      height: 105px;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.08));
+      transition: var(--transition);
+    }
+
+    .kawaii-peeking-cat:hover .peeking-cat-svg {
+      transform: translateY(-8px) scale(1.04);
+    }
+
+    /* Cat Animations */
+    .ear-left {
+      transform-origin: 30px 45px;
+      animation: earTwitchLeft 4s infinite ease-in-out;
+    }
+
+    .ear-right {
+      transform-origin: 110px 45px;
+      animation: earTwitchRight 4.5s infinite ease-in-out;
+    }
+
+    @keyframes earTwitchLeft {
+      0%, 90%, 100% { transform: rotate(0deg); }
+      93% { transform: rotate(-8deg); }
+      96% { transform: rotate(4deg); }
+    }
+
+    @keyframes earTwitchRight {
+      0%, 88%, 100% { transform: rotate(0deg); }
+      92% { transform: rotate(8deg); }
+      95% { transform: rotate(-4deg); }
+    }
+
+    .eye-blink {
+      animation: blinkEyes 4.5s infinite ease-in-out;
+      transform-origin: center;
+    }
+
+    @keyframes blinkEyes {
+      0%, 96%, 100% { transform: scaleY(1); }
+      98% { transform: scaleY(0.1); }
+    }
+
+    .paws-knead-left {
+      animation: pawKnead 2s infinite ease-in-out alternate;
+      transform-origin: 45px 95px;
+    }
+
+    .paws-knead-right {
+      animation: pawKnead 2s infinite ease-in-out alternate-reverse;
+      transform-origin: 95px 95px;
+    }
+
+    @keyframes pawKnead {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-3px); }
+    }
+
+    .qr-card-vip {
+      position: relative;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 38px 30px 30px;
+      width: 100%;
+      max-width: 390px;
+      box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.22), 0 0 0 3px #fed7aa;
+      text-align: center;
+      transition: var(--transition);
+      border-top: 6px solid #fb923c;
+    }
+
+    .qr-card-vip:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 50px -10px rgba(249, 115, 22, 0.32);
+    }
+
+    .qr-badge-urgent {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #fff7ed, #fee2e2);
+      color: #c2410c;
+      font-size: 0.85rem;
+      font-weight: 900;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 14px;
+      border: 1.5px solid #fed7aa;
+    }
+
+    .qr-badge-urgent i {
+      color: #ef4444;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    .qr-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .qr-subtitle {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-bottom: 18px;
+    }
+
+    .qr-frame {
+      position: relative;
+      display: inline-block;
+      padding: 14px;
+      background: #ffffff;
+      border: 3px dashed #fb923c;
+      border-radius: var(--radius-md);
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.03);
+      margin-bottom: 16px;
+      transition: var(--transition);
+    }
+
+    .qr-frame:hover {
+      border-color: #2563eb;
+      background: #eff6ff;
+    }
+
+    .qr-image {
+      width: 195px;
+      height: 195px;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    .qr-tip {
+      font-size: 0.88rem;
+      color: #ea580c;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .qr-footer-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .btn-qr-action {
+      font-size: 0.86rem;
+      padding: 9px 18px;
+      border-radius: var(--radius-full);
+      background: #fff7ed;
+      color: #c2410c;
+      text-decoration: none;
+      font-weight: 900;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 2px solid #fed7aa;
+      cursor: pointer;
+    }
+
+    .btn-qr-action:hover {
+      background: #fed7aa;
+      transform: translateY(-2px);
+    }
+
+    /* Stats Quick Bar */
+    .stats-section {
+      margin-top: -36px;
+      position: relative;
+      z-index: 10;
+      margin-bottom: 60px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      padding: 24px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 2px solid #fed7aa;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(249, 115, 22, 0.2);
+    }
+
+    .stat-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .stat-icon.blue { background: #dbeafe; color: #2563eb; }
+    .stat-icon.orange { background: #ffedd5; color: #ea580c; }
+    .stat-icon.green { background: #d1fae5; color: #059669; }
+    .stat-icon.purple { background: #fce7f3; color: #db2777; }
+
+    .stat-info .stat-number {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .stat-info .stat-label {
+      font-size: 0.88rem;
+      color: #64748b;
+      font-weight: 800;
+    }
+
+    /* General Section Styling */
+    .section-block {
+      padding: 70px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+
+    .section-subtitle {
+      color: #ea580c;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 5px;
+      background: linear-gradient(90deg, #fb923c, #f472b6);
+      margin: 12px auto 0;
+      border-radius: var(--radius-full);
+    }
+
+    .section-description {
+      color: #64748b;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    /* Announcements Section */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 26px;
+    }
+
+    .news-card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      border: 2px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: #fb923c;
+    }
+
+    .news-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .news-tag {
+      font-size: 0.8rem;
+      font-weight: 900;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    .news-tag.urgent { background: #fee2e2; color: #dc2626; }
+    .news-tag.activity { background: #dbeafe; color: #1d4ed8; }
+    .news-tag.cat { background: #ffedd5; color: #ea580c; border: 1px solid #fed7aa; }
+
+    .news-date {
+      font-size: 0.84rem;
+      color: #64748b;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .news-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+
+    .news-excerpt {
+      font-size: 0.94rem;
+      color: #64748b;
+      margin-bottom: 22px;
+      flex-grow: 1;
+      line-height: 1.7;
+    }
+
+    .news-link {
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: #ea580c;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .news-link:hover {
+      gap: 12px;
+      color: #c2410c;
+    }
+
+    /* Teacher Greeting Section */
+    .motto-container {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb 60%, #3b82f6);
+      border-radius: var(--radius-lg);
+      color: #ffffff;
+      padding: 54px 44px;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .teacher-profile {
+      text-align: center;
+    }
+
+    .teacher-avatar {
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      background: #ffffff;
+      margin: 0 auto 16px;
+      padding: 6px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #2563eb;
+      position: relative;
+    }
+
+    .avatar-mini-cat {
+      position: absolute;
+      bottom: -6px;
+      right: -6px;
+      background: #fb923c;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 3px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .teacher-name {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .teacher-role {
+      font-size: 0.92rem;
+      color: #bfdbfe;
+      font-weight: 700;
+    }
+
+    .motto-content h3 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #fde047;
+    }
+
+    .motto-quote {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: #e0e7ff;
+      margin-bottom: 26px;
+      font-weight: 500;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .pillar-item {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 16px 12px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: var(--transition);
+    }
+
+    .pillar-item:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+    }
+
+    .pillar-icon {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+      color: #fde047;
+    }
+
+    .pillar-name {
+      font-size: 0.98rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    /* Mascot Cat "橘寶" Full Showcase Section */
+    .mascot-feature-box {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 42px;
+      border: 3px solid #fed7aa;
+      box-shadow: 0 20px 45px -10px rgba(249, 115, 22, 0.2);
+      max-width: 950px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+    }
+
+    .mascot-avatar-showcase {
+      text-align: center;
+      position: relative;
+    }
+
+    .mascot-face-circle {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff7ed 40%, #ffedd5 100%);
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(249, 115, 22, 0.25);
+      border: 5px solid white;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .mascot-face-circle:hover {
+      transform: scale(1.06);
+    }
+
+    .big-cat-svg {
+      width: 155px;
+      height: 155px;
+    }
+
+    .interact-btn-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-pet-mascot {
+      background: linear-gradient(135deg, #fb923c, #ea580c);
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 0.92rem;
+      font-weight: 900;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-pet-mascot:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 10px 22px rgba(249, 115, 22, 0.45);
+    }
+
+    .btn-feed-fish {
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: white;
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.92rem;
+      font-weight: 900;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-feed-fish:hover {
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    .mascot-badge-tag {
+      background: #fff7ed;
+      color: #ea580c;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 900;
+      border: 1.5px solid #fed7aa;
+    }
+
+    /* Timetable / Schedule */
+    .schedule-box {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 2px solid var(--border-color);
+      overflow-x: auto;
+      padding: 26px;
+    }
+
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 0.94rem;
+    }
+
+    .custom-table th {
+      background: #eff6ff;
+      color: var(--primary-dark);
+      font-weight: 900;
+      padding: 15px 10px;
+      border: 1px solid #dbeafe;
+    }
+
+    .custom-table td {
+      padding: 13px 10px;
+      border: 1px solid #e2e8f0;
+      font-weight: 700;
+    }
+
+    .custom-table tr:hover {
+      background-color: #fffbf5;
+    }
+
+    .badge-course {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .c-chinese { background: #fee2e2; color: #b91c1c; }
+    .c-math { background: #e0e7ff; color: #4338ca; }
+    .c-english { background: #dcfce7; color: #15803d; }
+    .c-science { background: #fef3c7; color: #b45309; }
+    .c-social { background: #ffedd5; color: #c2410c; }
+    .c-pe { background: #e0f2fe; color: #0369a1; }
+    .c-art { background: #fce7f3; color: #be185d; }
+
+    /* Class Life Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .gallery-card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 2px solid var(--border-color);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: #fb923c;
+    }
+
+    .gallery-img-wrap {
+      height: 185px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      position: relative;
+    }
+
+    .gallery-img-wrap.bg-cat { background: linear-gradient(135deg, #fb923c, #ea580c); }
+    .gallery-img-wrap.bg-1 { background: linear-gradient(135deg, #38bdf8, #0284c7); }
+    .gallery-img-wrap.bg-2 { background: linear-gradient(135deg, #f472b6, #db2777); }
+    .gallery-img-wrap.bg-3 { background: linear-gradient(135deg, #34d399, #059669); }
+
+    .gallery-tag-float {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(4px);
+      color: white;
+      font-size: 0.78rem;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-weight: 900;
+    }
+
+    .gallery-details {
+      padding: 18px;
+    }
+
+    .gallery-details h4 {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .gallery-details p {
+      font-size: 0.88rem;
+      color: #64748b;
+    }
+
+    /* Honor Roll Section */
+    .honors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .honor-card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 2px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .honor-card:hover {
+      border-color: #fb923c;
+      box-shadow: 0 12px 24px -5px rgba(249, 115, 22, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .honor-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fde047, #f59e0b);
+      color: #78350f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .honor-icon.cat-star {
+      background: linear-gradient(135deg, #fed7aa, #fb923c);
+      color: #9a3412;
+    }
+
+    .honor-text h4 {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .honor-text p {
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    /* SUPER KAWAII FLOATING CAT MASCOT (Bottom-Left) WITH MOUSE TRACKING */
+    .kawaii-floating-companion {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+    }
+
+    .companion-speech-bubble {
+      background: #ffffff;
+      color: #ea580c;
+      font-weight: 900;
+      font-size: 0.85rem;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.2);
+      border: 2px solid #fed7aa;
+      margin-bottom: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      position: relative;
+      animation: catDialogueBounce 3.2s infinite ease-in-out;
+    }
+
+    .companion-speech-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid #fed7aa;
+    }
+
+    @keyframes catDialogueBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .companion-cat-stage {
+      background: #ffffff;
+      padding: 8px 14px 6px;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(249, 115, 22, 0.3);
+      border: 2.5px solid #fed7aa;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+      position: relative;
+    }
+
+    .companion-cat-stage:hover {
+      transform: scale(1.08) translateY(-4px);
+      border-color: #fb923c;
+    }
+
+    .companion-cat-stage:active {
+      transform: scale(0.95);
+    }
+
+    .companion-cat-svg {
+      width: 82px;
+      height: 78px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .pet-heart-tag {
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: #ea580c;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    /* Floating particles generated on petting */
+    .floating-sparkle {
+      position: fixed;
+      pointer-events: none;
+      font-size: 1.6rem;
+      animation: floatUpBurst 1.2s forwards cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      z-index: 1001;
+    }
+
+    @keyframes floatUpBurst {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.6) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-40px) scale(1.4) rotate(15deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-80px) scale(1.8) rotate(-15deg);
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 65px 0 30px;
+      margin-top: 60px;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      color: #ffffff;
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-brand p {
+      font-size: 0.94rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .footer-col h4::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 32px;
+      height: 3px;
+      background: #fb923c;
+      border-radius: 2px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+      padding-left: 6px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: #64748b;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #fb923c, #ea580c);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 6px 18px rgba(249, 115, 22, 0.4);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+      border: none;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 10px 24px rgba(249, 115, 22, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .motto-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .mascot-feature-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero-title {
+        font-size: 2.4rem;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .qr-card-vip {
+        max-width: 320px;
+        padding: 28px 18px;
+      }
+      .qr-image {
+        width: 170px;
+        height: 170px;
+      }
+      .kawaii-floating-companion {
+        bottom: 16px;
+        left: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>
+        <i class="fa-solid fa-cat"></i> 
+        喵～歡迎蒞臨澎湖縣後寮國小 六年甲班！可愛班貓橘寶天天陪伴我們快樂學習！🐾♡
+      </span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon-wrap">
+          <!-- Cute Cat Head SVG in Logo -->
+          <svg class="brand-cat-face" viewBox="0 0 50 50">
+            <!-- Ears -->
+            <polygon points="10,22 4,6 20,12" fill="#ffffff"/>
+            <polygon points="9,20 6,10 16,14" fill="#f472b6"/>
+            <polygon points="40,22 46,6 30,12" fill="#ffffff"/>
+            <polygon points="41,20 44,10 34,14" fill="#f472b6"/>
+            <!-- Head -->
+            <ellipse cx="25" cy="28" rx="18" ry="14" fill="#ffffff"/>
+            <!-- Cheeks -->
+            <circle cx="15" cy="31" r="3.2" fill="#f472b6" opacity="0.8"/>
+            <circle cx="35" cy="31" r="3.2" fill="#f472b6" opacity="0.8"/>
+            <!-- Anime Eyes -->
+            <ellipse cx="19" cy="27" rx="2.5" ry="3.5" fill="#1e1b4b"/>
+            <circle cx="18" cy="26" r="1.2" fill="#ffffff"/>
+            <ellipse cx="31" cy="27" rx="2.5" ry="3.5" fill="#1e1b4b"/>
+            <circle cx="30" cy="26" r="1.2" fill="#ffffff"/>
+            <!-- Tiny Nose & Mouth -->
+            <polygon points="25,32 23.5,30.5 26.5,30.5" fill="#f43f5e"/>
+            <path d="M22.5,33 Q25,35.5 25,33 Q25,35.5 27.5,33" fill="none" stroke="#7c2d12" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>後寮國小 六年甲班</h1>
+          <p>HOULIAO ELEMENTARY · CLASS 6A 🐾</p>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="active"><i class="fa-solid fa-house"></i> 首頁</a></li>
+        <li><a href="#news"><i class="fa-solid fa-bullhorn"></i> 最新消息</a></li>
+        <li><a href="#teacher"><i class="fa-solid fa-heart"></i> 導師叮嚀</a></li>
+        <li><a href="#schedule"><i class="fa-solid fa-calendar-days"></i> 班級課表</a></li>
+        <li><a href="#mascot-section"><i class="fa-solid fa-shield-cat"></i> 萌貓橘寶</a></li>
+        <li><a href="#gallery"><i class="fa-solid fa-camera"></i> 班級剪影</a></li>
+        <li><a href="#qrcode-section" class="nav-cta"><i class="fa-solid fa-qrcode"></i> 班級 QR Code</a></li>
+      </ul>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="選單">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-nav" style="display: none; background: white; border-bottom: 3px solid #fed7aa; padding: 18px 24px;">
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+      <li><a href="#about" onclick="toggleMobileMenu()" style="text-decoration:none; color:var(--text-main); font-weight:800;"><i class="fa-solid fa-house"></i> 首頁</a></li>
+      <li><a href="#news" onclick="toggleMobileMenu()" style="text-decoration:none; color:var(--text-main); font-weight:800;"><i class="fa-solid fa-bullhorn"></i> 最新消息</a></li>
+      <li><a href="#teacher" onclick="toggleMobileMenu()" style="text-decoration:none; color:var(--text-main); font-weight:800;"><i class="fa-solid fa-heart"></i> 導師叮嚀</a></li>
+      <li><a href="#schedule" onclick="toggleMobileMenu()" style="text-decoration:none; color:var(--text-main); font-weight:800;"><i class="fa-solid fa-calendar-days"></i> 班級課表</a></li>
+      <li><a href="#mascot-section" onclick="toggleMobileMenu()" style="text-decoration:none; color:#ea580c; font-weight:800;"><i class="fa-solid fa-shield-cat"></i> 萌貓橘寶</a></li>
+      <li><a href="#gallery" onclick="toggleMobileMenu()" style="text-decoration:none; color:var(--text-main); font-weight:800;"><i class="fa-solid fa-camera"></i> 班級剪影</a></li>
+      <li><a href="#qrcode-section" onclick="toggleMobileMenu()" style="text-decoration:none; color:var(--primary); font-weight:900;"><i class="fa-solid fa-qrcode"></i> 掃描 QR Code</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section with QR Code and Super Cute Kawaii Peeking Cat -->
+  <section class="hero-section" id="about">
+    <div class="floating-paw fp-1"><i class="fa-solid fa-paw"></i></div>
+    <div class="floating-paw fp-2"><i class="fa-solid fa-paw"></i></div>
+    <div class="floating-paw fp-3"><i class="fa-solid fa-paw"></i></div>
+    <div class="floating-paw fp-4"><i class="fa-solid fa-paw"></i></div>
+
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Left Info -->
+        <div class="hero-content">
+          <div class="hero-welcome-badge">
+            <i class="fa-solid fa-shield-cat"></i> 澎湖縣白沙鄉 · 後寮國小六年甲班 🐾
+          </div>
+          <h2 class="hero-title">
+            築夢啟航，<br>
+            <span class="highlight">六年甲班</span> 活力綻放！
+          </h2>
+          <p class="hero-desc">
+            這裡是後寮國小六年甲班的溫馨天地。全班齊心學習、熱情探索，還有超級卡哇伊的萌貓橘寶陪伴我們晨讀與下課，一起寫下童年最燦爛的每一刻！♡
+          </p>
+          <div class="hero-actions">
+            <a href="#news" class="btn btn-primary">
+              <i class="fa-solid fa-bell"></i> 查看最新公告
+            </a>
+            <a href="#qrcode-section" class="btn btn-secondary">
+              <i class="fa-solid fa-qrcode"></i> 掃描班級條碼
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Right: High Priority QR Code with Kawaii Peeking Mochi Cat -->
+        <div class="hero-qr-showcase" id="qrcode-section">
+          
+          <!-- Kawaii Peeking Cat on top of QR Code card -->
+          <div class="kawaii-peeking-cat" onclick="playCuteKittenSound()">
+            <div class="cat-dialogue-tag">
+              🐾 喵嗚～快拿手機掃我！♡
+            </div>
+
+            <!-- Crafted Super Kawaii Animated Cat SVG -->
+            <svg class="peeking-cat-svg" viewBox="0 0 140 85">
+              <defs>
+                <linearGradient id="catBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#fed7aa"/>
+                  <stop offset="100%" stop-color="#fdba74"/>
+                </linearGradient>
+                <linearGradient id="earInnerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#fbcfe8"/>
+                  <stop offset="100%" stop-color="#f472b6"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Left Ear with Wiggle -->
+              <g class="ear-left">
+                <path d="M24,42 C12,24 16,10 24,6 C34,10 42,24 45,34 Z" fill="url(#catBodyGrad)" stroke="#ea580c" stroke-width="1.8"/>
+                <path d="M24,36 C18,24 20,14 25,11 C31,14 36,24 38,30 Z" fill="url(#earInnerGrad)"/>
+              </g>
+
+              <!-- Right Ear with Wiggle -->
+              <g class="ear-right">
+                <path d="M116,42 C128,24 124,10 116,6 C106,10 98,24 95,34 Z" fill="url(#catBodyGrad)" stroke="#ea580c" stroke-width="1.8"/>
+                <path d="M116,36 C122,24 120,14 115,11 C109,14 104,24 102,30 Z" fill="url(#earInnerGrad)"/>
+              </g>
+
+              <!-- Cute Little School Yellow Cap (小黃帽) -->
+              <ellipse cx="70" cy="22" rx="22" ry="11" fill="#fde047" stroke="#ca8a04" stroke-width="1.5"/>
+              <ellipse cx="70" cy="19" rx="14" ry="7" fill="#fef08a"/>
+              <polygon points="70,10 67,14 73,14" fill="#ef4444"/>
+
+              <!-- Chubby Mochi Cat Head -->
+              <path d="M22,50 C16,68 35,76 70,76 C105,76 124,68 118,50 C114,32 95,26 70,26 C45,26 26,32 22,50 Z" 
+                    fill="url(#catBodyGrad)" stroke="#ea580c" stroke-width="1.8"/>
+
+              <!-- Cute Orange Tabby Forehead Stripes -->
+              <path d="M70,28 L70,36 M62,31 L64,38 M78,31 L76,38" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+
+              <!-- Big Rosy Pink Blushing Cheeks -->
+              <ellipse cx="36" cy="58" rx="10" ry="6.5" fill="#f472b6" opacity="0.85"/>
+              <ellipse cx="104" cy="58" rx="10" ry="6.5" fill="#f472b6" opacity="0.85"/>
+              <path d="M32,58 L34,55 M36,59 L38,56 M40,58 L42,55" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M100,58 L102,55 M104,59 L106,56 M108,58 L110,55" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+
+              <!-- Big Glossy Anime Eyes with Sparkle Highlights -->
+              <g class="eye-blink">
+                <!-- Left Eye -->
+                <ellipse cx="46" cy="48" rx="6.5" ry="8.5" fill="#0f172a"/>
+                <ellipse cx="44.5" cy="45.5" rx="2.8" ry="3.8" fill="#ffffff"/>
+                <circle cx="48.5" cy="52" r="1.4" fill="#ffffff"/>
+                <!-- Right Eye -->
+                <ellipse cx="94" cy="48" rx="6.5" ry="8.5" fill="#0f172a"/>
+                <ellipse cx="92.5" cy="45.5" rx="2.8" ry="3.8" fill="#ffffff"/>
+                <circle cx="96.5" cy="52" r="1.4" fill="#ffffff"/>
+              </g>
+
+              <!-- Tiny Strawberry Pink Nose & Cat Smile (ω) -->
+              <polygon points="70,55 66.5,51 73.5,51" fill="#f43f5e"/>
+              <path d="M63.5,57 Q67,61.5 70,57 Q73,61.5 76.5,57" fill="none" stroke="#7c2d12" stroke-width="2.2" stroke-linecap="round"/>
+              <!-- Tiny Open Mouth Pink Tongue -->
+              <path d="M68,59 Q70,63 72,59 Z" fill="#fda4af"/>
+
+              <!-- Whisker Lines -->
+              <line x1="22" y1="52" x2="6" y2="50" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="20" y1="58" x2="4" y2="61" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="118" y1="52" x2="134" y2="50" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="120" y1="58" x2="136" y2="61" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+
+              <!-- Chubby Squishy Paws Kneading over the Edge -->
+              <g class="paws-knead-left">
+                <ellipse cx="42" cy="79" rx="14" ry="9" fill="#ffffff" stroke="#ea580c" stroke-width="1.8"/>
+                <circle cx="42" cy="78" r="3.8" fill="#f472b6"/>
+                <circle cx="35" cy="80" r="2" fill="#f472b6"/>
+                <circle cx="42" cy="83" r="2" fill="#f472b6"/>
+                <circle cx="49" cy="80" r="2" fill="#f472b6"/>
+              </g>
+
+              <g class="paws-knead-right">
+                <ellipse cx="98" cy="79" rx="14" ry="9" fill="#ffffff" stroke="#ea580c" stroke-width="1.8"/>
+                <circle cx="98" cy="78" r="3.8" fill="#f472b6"/>
+                <circle cx="91" cy="80" r="2" fill="#f472b6"/>
+                <circle cx="98" cy="83" r="2" fill="#f472b6"/>
+                <circle cx="105" cy="80" r="2" fill="#f472b6"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="qr-card-vip">
+            <div class="qr-badge-urgent">
+              <i class="fa-solid fa-paw"></i> 班級首要推薦 · 快速加入
+            </div>
+            <h3 class="qr-title">班級專屬 QR Code</h3>
+            <p class="qr-subtitle">手機拿起相機掃一掃，隨時掌握聯絡簿與即時動態！</p>
+            
+            <div class="qr-frame">
+              <!-- 指定放入 qrcode.png -->
+              <img src="qrcode.png" alt="後寮國小六年甲班 QR Code" class="qr-image" id="class-qr">
+            </div>
+
+            <div class="qr-tip">
+              <i class="fa-solid fa-cat"></i> 萌貓認證 · 即掃即看方便家長與同學
+            </div>
+
+            <div class="qr-footer-actions">
+              <a href="qrcode.png" download="後寮國小六年甲班_QRCode.png" class="btn-qr-action">
+                <i class="fa-solid fa-download"></i> 下載條碼
+              </a>
+              <button onclick="copyPageUrl()" class="btn-qr-action">
+                <i class="fa-solid fa-share-nodes"></i> 分享網址
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Statistics -->
+  <div class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon blue">
+            <i class="fa-solid fa-children"></i>
+          </div>
+          <div class="stat-info">
+            <div class="stat-number">六年級</div>
+            <div class="stat-label">甲班大家庭</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon orange">
+            <i class="fa-solid fa-cat"></i>
+          </div>
+          <div class="stat-info">
+            <div class="stat-number">1 隻橘寶</div>
+            <div class="stat-label">超萌伴讀守護貓</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon green">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <div class="stat-info">
+            <div class="stat-number">自主學習</div>
+            <div class="stat-label">探索海島多元知識</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon purple">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="stat-info">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">滿滿活力與愛心</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Announcements Section -->
+  <section class="section-block" id="news">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">LATEST ANNOUNCEMENTS</span>
+        <h3 class="section-title">🐾 班級最新公告</h3>
+        <p class="section-description">隨時掌握重要活動、每日作業叮嚀與學校近期行事曆</p>
+      </div>
+
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-tag urgent">重要通知</span>
+            <span class="news-date"><i class="fa-regular fa-clock"></i> 2026/11/15</span>
+          </div>
+          <h4 class="news-title">六年級畢業旅行家長同意書繳交提醒</h4>
+          <p class="news-excerpt">親愛的家長您好，為妥善安排畢業旅行之保險與車輛調配，請於本週五前將同意書暨回條簽章繳回。</p>
+          <a href="#qrcode-section" class="news-link">掃描 QR Code 查看回條 <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-tag activity">活動快報</span>
+            <span class="news-date"><i class="fa-regular fa-clock"></i> 2026/11/12</span>
+          </div>
+          <h4 class="news-title">澎湖白沙鄉戶外海洋生態探究體驗日</h4>
+          <p class="news-excerpt">六年甲班將於下週二前往後寮海域潮間帶進行生態踏查，請同學備妥雨鞋、遮陽帽與探究手冊。</p>
+          <a href="#gallery" class="news-link">瀏覽活動精彩相片 <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-tag cat"><i class="fa-solid fa-cat"></i> 萌貓動態</span>
+            <span class="news-date"><i class="fa-regular fa-clock"></i> 2026/11/11</span>
+          </div>
+          <h4 class="news-title">班貓「橘寶」今日在書櫃前督導晨讀！</h4>
+          <p class="news-excerpt">晨間共讀時，橘寶舒服窩在閱讀角呼嚕呼嚕，全班同學專注安靜，獲得橘寶小肉墊蓋章肯定！🐾</p>
+          <a href="#mascot-section" class="news-link">看橘寶更多秘密檔案 <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mascot Cat "橘寶" Special Showcase Section -->
+  <section class="section-block" id="mascot-section" style="background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%); border-radius: var(--radius-lg); margin: 20px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">CLASS MASCOT</span>
+        <h3 class="section-title">🐱 六甲榮譽守護喵「橘寶」</h3>
+        <p class="section-description">全班同學的心靈充電站！點一點、摸一摸，聽聽軟萌的貓咪叫聲～</p>
+      </div>
+
+      <div class="mascot-feature-box">
+        <div class="mascot-avatar-showcase">
+          <div class="mascot-face-circle" onclick="petTheCat(event)">
+            <!-- Super High Detail Kawaii Cat Face SVG -->
+            <svg class="big-cat-svg" viewBox="0 0 100 100">
+              <!-- Ears -->
+              <polygon points="18,38 6,12 36,22" fill="#fb923c"/>
+              <polygon points="17,34 11,17 31,23" fill="#f472b6"/>
+              <polygon points="82,38 94,12 64,22" fill="#fb923c"/>
+              <polygon points="83,34 89,17 69,23" fill="#f472b6"/>
+              
+              <!-- Red Collar with Golden Bell -->
+              <path d="M22,78 Q50,92 78,78" fill="none" stroke="#ef4444" stroke-width="7" stroke-linecap="round"/>
+              <circle cx="50" cy="86" r="6.5" fill="#facc15" stroke="#ca8a04" stroke-width="1.5"/>
+              <circle cx="50" cy="87.5" r="1.5" fill="#713f12"/>
+
+              <!-- Face -->
+              <circle cx="50" cy="52" r="38" fill="#fed7aa"/>
+              <path d="M50,18 L50,28 M42,22 L44,30 M58,22 L56,30" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+
+              <!-- Cheeks -->
+              <circle cx="26" cy="60" r="7.5" fill="#f472b6" opacity="0.85"/>
+              <circle cx="74" cy="60" r="7.5" fill="#f472b6" opacity="0.85"/>
+              <!-- Cheek Sparkles -->
+              <path d="M23,60 L25,57 M26,61 L28,58" stroke="#ffffff" stroke-width="1.2"/>
+              <path d="M71,60 L73,57 M74,61 L76,58" stroke="#ffffff" stroke-width="1.2"/>
+
+              <!-- Big Shimmering Anime Eyes -->
+              <ellipse cx="36" cy="48" rx="6.5" ry="8.5" fill="#0f172a"/>
+              <ellipse cx="34.5" cy="45.5" rx="3" ry="4" fill="#ffffff"/>
+              <circle cx="38.5" cy="52" r="1.6" fill="#ffffff"/>
+              
+              <ellipse cx="64" cy="48" rx="6.5" ry="8.5" fill="#0f172a"/>
+              <ellipse cx="62.5" cy="45.5" rx="3" ry="4" fill="#ffffff"/>
+              <circle cx="66.5" cy="52" r="1.6" fill="#ffffff"/>
+
+              <!-- Nose & Cute Mouth -->
+              <polygon points="50,57 46.5,53 53.5,53" fill="#f43f5e"/>
+              <path d="M44,59 Q50,64 50,58 Q50,64 56,59" fill="none" stroke="#7c2d12" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M48,60 Q50,64 52,60 Z" fill="#fda4af"/>
+
+              <!-- Whiskers -->
+              <line x1="16" y1="52" x2="3" y2="49" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="14" y1="59" x2="2" y2="61" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="84" y1="52" x2="97" y2="49" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="86" y1="59" x2="98" y2="61" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="interact-btn-group">
+            <button onclick="petTheCat(event)" class="btn-pet-mascot">
+              <i class="fa-solid fa-heart"></i> 摸摸橘寶
+            </button>
+            <button onclick="feedFish(event)" class="btn-feed-fish">
+              <i class="fa-solid fa-fish"></i> 餵小魚乾
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+            <h4 style="font-size: 1.7rem; font-weight: 900; color: #0f172a;">橘寶 (Ju-Bao)</h4>
+            <span class="mascot-badge-tag"><i class="fa-solid fa-paw"></i> 六年甲班特別榮譽成員</span>
+          </div>
+          <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 20px; line-height: 1.8; font-weight: 600;">
+            橘寶是一隻親人撒嬌的米克斯橘貓，擁有圓滾滾的麻糬大臉與粉嫩肉球。最愛在六年甲班窗邊曬澎湖暖陽、監督同學排隊、陪大家寫數學練習題。只要聽到橘寶的「呼嚕呼嚕」聲，所有煩惱通通瞬間融化！♡
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; font-size: 0.94rem;">
+            <div style="background: #fff7ed; padding: 12px 16px; border-radius: 14px; border: 1.5px solid #fed7aa; font-weight: 700;">
+              <strong style="color: #ea580c;"><i class="fa-solid fa-briefcase"></i> 班級職務：</strong>心靈輔導長 兼 伴讀小組長
+            </div>
+            <div style="background: #fff7ed; padding: 12px 16px; border-radius: 14px; border: 1.5px solid #fed7aa; font-weight: 700;">
+              <strong style="color: #ea580c;"><i class="fa-solid fa-fish"></i> 最愛美食：</strong>澎湖小魚乾與水煮雞胸肉
+            </div>
+            <div style="background: #fff7ed; padding: 12px 16px; border-radius: 14px; border: 1.5px solid #fed7aa; font-weight: 700;">
+              <strong style="color: #ea580c;"><i class="fa-solid fa-sun"></i> 每日嗜好：</strong>伸懶腰、打哈欠、給全班摸摸
+            </div>
+            <div style="background: #fff7ed; padding: 12px 16px; border-radius: 14px; border: 1.5px solid #fed7aa; font-weight: 700;">
+              <strong style="color: #ea580c;"><i class="fa-solid fa-comment-dots"></i> 橘寶名言：</strong>喵～今天也要開心學習唷！
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teacher Greeting & Class Spirit -->
+  <section class="section-block" id="teacher">
+    <div class="container">
+      <div class="motto-container">
+        <div class="teacher-profile">
+          <div class="teacher-avatar">
+            <i class="fa-solid fa-user-graduate"></i>
+            <div class="avatar-mini-cat">
+              <i class="fa-solid fa-cat" style="color: white; font-size: 1.2rem;"></i>
+            </div>
+          </div>
+          <h4 class="teacher-name">六年甲班 導師</h4>
+          <div class="teacher-role">六年甲班班主任兼導師</div>
+        </div>
+
+        <div class="motto-content">
+          <h3>導師給六年甲班的一封信 🐾</h3>
+          <p class="motto-quote">
+            「六年級是小學階段最豐收也是最關鍵的一哩路。希望甲班的每一位大孩子，都能在課堂中保持好奇、在相處中學會包容與合作，就像身邊的橘寶一樣，對未知世界充滿探索的熱情，勇敢展翅飛向屬於自己的蔚藍天空！」
+          </p>
+
+          <div class="pillars-grid">
+            <div class="pillar-item">
+              <div class="pillar-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+              <div class="pillar-name">互助關懷</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+              <div class="pillar-name">主動好學</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-icon"><i class="fa-solid fa-person-running"></i></div>
+              <div class="pillar-name">強健體魄</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-icon"><i class="fa-solid fa-compass"></i></div>
+              <div class="pillar-name">立定志向</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule / Weekly Timetable -->
+  <section class="section-block" id="schedule">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">WEEKLY TIMETABLE</span>
+        <h3 class="section-title">🐾 每週課程表</h3>
+        <p class="section-description">六年甲班常態作息與各領域專題探究課程安排</p>
+      </div>
+
+      <div class="schedule-box">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 15%;">節次 \ 星期</th>
+              <th style="width: 17%;">週一 (Mon)</th>
+              <th style="width: 17%;">週二 (Tue)</th>
+              <th style="width: 17%;">週三 (Wed)</th>
+              <th style="width: 17%;">週四 (Thu)</th>
+              <th style="width: 17%;">週五 (Fri)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>第 1 節</strong><br><small>08:40 - 09:20</small></td>
+              <td><span class="badge-course c-chinese">國語</span></td>
+              <td><span class="badge-course c-math">數學</span></td>
+              <td><span class="badge-course c-english">英語</span></td>
+              <td><span class="badge-course c-chinese">國語</span></td>
+              <td><span class="badge-course c-math">數學</span></td>
+            </tr>
+            <tr>
+              <td><strong>第 2 節</strong><br><small>09:30 - 10:10</small></td>
+              <td><span class="badge-course c-math">數學</span></td>
+              <td><span class="badge-course c-chinese">國語</span></td>
+              <td><span class="badge-course c-science">自然科學</span></td>
+              <td><span class="badge-course c-social">社會</span></td>
+              <td><span class="badge-course c-chinese">國語</span></td>
+            </tr>
+            <tr>
+              <td><strong>第 3 節</strong><br><small>10:30 - 11:10</small></td>
+              <td><span class="badge-course c-english">英語</span></td>
+              <td><span class="badge-course c-science">自然科學</span></td>
+              <td><span class="badge-course c-pe">健康與體育</span></td>
+              <td><span class="badge-course c-math">數學</span></td>
+              <td><span class="badge-course c-art">藝術與人文</span></td>
+            </tr>
+            <tr>
+              <td><strong>第 4 節</strong><br><small>11:20 - 12:00</small></td>
+              <td><span class="badge-course c-social">社會</span></td>
+              <td><span class="badge-course c-art">藝術與人文</span></td>
+              <td><span class="badge-course c-chinese">閱讀推廣</span></td>
+              <td><span class="badge-course c-science">自然實驗</span></td>
+              <td><span class="badge-course c-pe">健康與體育</span></td>
+            </tr>
+            <tr style="background-color: #fff7ed;">
+              <td colspan="6" style="padding: 12px; font-weight: 800; color: #ea580c;">
+                <i class="fa-solid fa-cat"></i> 12:00 - 13:20 活力午餐時間 · 與橘寶午休充電 🐾 (Zzz...)
+              </td>
+            </tr>
+            <tr>
+              <td><strong>第 5 節</strong><br><small>13:30 - 14:10</small></td>
+              <td><span class="badge-course c-science">資訊科技</span></td>
+              <td><span class="badge-course c-social">海洋在地校本</span></td>
+              <td style="color:#94a3b8;">— 週三下午進修 —</td>
+              <td><span class="badge-course c-chinese">作文寫作</span></td>
+              <td><span class="badge-course c-pe">班會與自治</span></td>
+            </tr>
+            <tr>
+              <td><strong>第 6 節</strong><br><small>14:20 - 15:00</small></td>
+              <td><span class="badge-course c-pe">體育大隊接力</span></td>
+              <td><span class="badge-course c-english">英語會話</span></td>
+              <td style="color:#94a3b8;">— 週三下午進修 —</td>
+              <td><span class="badge-course c-social">鄉土文化探訪</span></td>
+              <td><span class="badge-course c-art">社團活動時間</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Wall & Memories -->
+  <section class="section-block" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">CLASS MEMORIES</span>
+        <h3 class="section-title">🐾 班級精彩足跡</h3>
+        <p class="section-description">每一次的笑顏與揮灑汗水，都是六年甲班最珍貴的寶藏</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-img-wrap bg-cat">
+            <i class="fa-solid fa-cat"></i>
+            <span class="gallery-tag-float">萌貓相伴</span>
+          </div>
+          <div class="gallery-details">
+            <h4>橘寶的晨讀時光</h4>
+            <p>安靜蜷縮在書櫃邊陪大家共讀，是六甲最療癒溫暖的校園風景。</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-img-wrap bg-1">
+            <i class="fa-solid fa-water"></i>
+            <span class="gallery-tag-float">潮間帶踏查</span>
+          </div>
+          <div class="gallery-details">
+            <h4>後寮海灣生態探險</h4>
+            <p>觀察珊瑚、石滬與小螃蟹，親身感受大海的孕育力量。</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-img-wrap bg-2">
+            <i class="fa-solid fa-medal"></i>
+            <span class="gallery-tag-float">運動會風采</span>
+          </div>
+          <div class="gallery-details">
+            <h4>大隊接力團隊勇奪佳績</h4>
+            <p>一棒接一棒的默契傳遞，展現六甲同心協力的堅毅！</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-img-wrap bg-3">
+            <i class="fa-solid fa-flask"></i>
+            <span class="gallery-tag-float">創意科學</span>
+          </div>
+          <div class="gallery-details">
+            <h4>水動力火箭與科學展</h4>
+            <p>動手動腦探究物理奧秘，發射滿載夢想的創客模型。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honor Roll Section -->
+  <section class="section-block" id="honors">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">HONOR ROLL</span>
+        <h3 class="section-title">🐾 榮譽星榜</h3>
+        <p class="section-description">見證六年甲班每位同學在學業、品德與才藝上的卓越表現</p>
+      </div>
+
+      <div class="honors-grid">
+        <div class="honor-card">
+          <div class="honor-icon"><i class="fa-solid fa-trophy"></i></div>
+          <div class="honor-text">
+            <h4>全縣國小大隊接力 優勝</h4>
+            <p>六年甲班體育代表隊 榮獲全縣決賽優等殊榮</p>
+          </div>
+        </div>
+
+        <div class="honor-card">
+          <div class="honor-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <div class="honor-text">
+            <h4>語文競賽字音字形 特優</h4>
+            <p>六甲同學代表學校出賽，榮獲白沙學區第一名</p>
+          </div>
+        </div>
+
+        <div class="honor-card">
+          <div class="honor-icon cat-star"><i class="fa-solid fa-award"></i></div>
+          <div class="honor-text">
+            <h4>友善動物愛心校園 楷模班級</h4>
+            <p>全班齊心愛護動植物與班貓橘寶，獲評為生命教育典範！</p>
+          </div>
+        </div>
+
+        <div class="honor-card">
+          <div class="honor-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+          <div class="honor-text">
+            <h4>班級書香閱讀認證 楷模班級</h4>
+            <p>全班每人本學期平均閱讀量突破 25 本優良讀物</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPER KAWAII FLOATING COMPANION CAT (Bottom-Left) -->
+  <div class="kawaii-floating-companion" id="floatingCat">
+    <div class="companion-speech-bubble" id="companionBubble" onclick="petTheCat(event)">
+      喵～點我摸摸！🐾
+    </div>
+    <div class="companion-cat-stage" onclick="petTheCat(event)">
+      <!-- Animated Mochi Cat with Eyes that follow the mouse -->
+      <svg class="companion-cat-svg" viewBox="0 0 80 75" id="interactiveCatSvg">
+        <!-- Wagging Tail -->
+        <path d="M62,56 C74,52 80,36 72,30 C66,25 64,38 60,49" fill="none" stroke="#ea580c" stroke-width="4.5" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" values="0 60 55; 10 60 55; -8 60 55; 0 60 55" dur="3s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Chubby Cat Body -->
+        <ellipse cx="40" cy="53" rx="23" ry="16" fill="#fed7aa"/>
+        <ellipse cx="36" cy="53" rx="13" ry="10" fill="#fff7ed"/>
+
+        <!-- Ears -->
+        <polygon points="21,30 13,8 33,16" fill="#fb923c"/>
+        <polygon points="20,27 16,13 29,18" fill="#f472b6"/>
+        <polygon points="57,30 65,8 45,16" fill="#fb923c"/>
+        <polygon points="58,27 62,13 49,18" fill="#f472b6"/>
+
+        <!-- Head -->
+        <circle cx="39" cy="33" r="22" fill="#fed7aa"/>
+        <!-- Forehead Stripes -->
+        <path d="M39,13 L39,21 M34,16 L35,22 M44,16 L43,22" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Rosy Cheeks -->
+        <circle cx="26" cy="39" r="4" fill="#f472b6" opacity="0.85"/>
+        <circle cx="52" cy="39" r="4" fill="#f472b6" opacity="0.85"/>
+
+        <!-- Eyes Container (Pupils follow mouse smoothly) -->
+        <g id="catEyesGroup">
+          <!-- Left Eye Sclera -->
+          <ellipse cx="30" cy="32" rx="4.5" ry="6" fill="#0f172a"/>
+          <ellipse class="cat-pupil-left" cx="29" cy="30.5" rx="2" ry="2.8" fill="#ffffff"/>
+          <circle class="cat-pupil-left-sparkle" cx="32" cy="34" r="1" fill="#ffffff"/>
+
+          <!-- Right Eye Sclera -->
+          <ellipse cx="48" cy="32" rx="4.5" ry="6" fill="#0f172a"/>
+          <ellipse class="cat-pupil-right" cx="47" cy="30.5" rx="2" ry="2.8" fill="#ffffff"/>
+          <circle class="cat-pupil-right-sparkle" cx="50" cy="34" r="1" fill="#ffffff"/>
+        </g>
+
+        <!-- Nose & Cute Smiling Mouth -->
+        <polygon points="39,37 36.5,34.5 41.5,34.5" fill="#f43f5e"/>
+        <path d="M35.5,38.5 Q39,41.5 39,38 Q39,41.5 42.5,38.5" fill="none" stroke="#7c2d12" stroke-width="1.8" stroke-linecap="round"/>
+
+        <!-- Cute Paws -->
+        <ellipse cx="31" cy="63" rx="6.5" ry="4.5" fill="#ffffff" stroke="#ea580c" stroke-width="1.2"/>
+        <ellipse cx="47" cy="63" rx="6.5" ry="4.5" fill="#ffffff" stroke="#ea580c" stroke-width="1.2"/>
+      </svg>
+      <div class="pet-heart-tag">
+        <i class="fa-solid fa-heart" style="color: #f43f5e;"></i> 已被摸 <span id="petCounterDisplay">26</span> 次
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>
+            <i class="fa-solid fa-school"></i> 澎湖縣白沙鄉後寮國民小學
+          </h3>
+          <p>
+            六年甲班官方網站 · 記錄學習成長的點滴軌跡。<br>
+            校址：澎湖縣白沙鄉後寮村 103 號<br>
+            電話：(06) 993-1234
+          </p>
+          <div style="font-size: 0.92rem; color: #cbd5e1; font-weight: 700;">
+            <i class="fa-solid fa-envelope"></i> 班級聯絡：class6a@hlps.phc.edu.tw
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>快速導覽</h4>
+          <ul class="footer-links">
+            <li><a href="#about"><i class="fa-solid fa-angle-right"></i> 回到頂端</a></li>
+            <li><a href="#news"><i class="fa-solid fa-angle-right"></i> 班級最新公告</a></li>
+            <li><a href="#schedule"><i class="fa-solid fa-angle-right"></i> 每週課表一覽</a></li>
+            <li><a href="#mascot-section"><i class="fa-solid fa-angle-right"></i> 班貓橘寶檔案</a></li>
+            <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> 精彩活動相片</a></li>
+            <li><a href="#honors"><i class="fa-solid fa-angle-right"></i> 榮譽得獎榜單</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>班級 QR Code 連結</h4>
+          <p style="font-size: 0.92rem; margin-bottom: 14px; color: #94a3b8; line-height: 1.6;">
+            手機掃瞄頂端 QR Code 隨身收藏，隨時掌握後寮國小六年甲班各項重要叮嚀。
+          </p>
+          <a href="#qrcode-section" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.92rem;">
+            <i class="fa-solid fa-qrcode"></i> 前往 QR Code 專區
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 後寮國小 六年甲班 Class 6A · 萌貓橘寶守護中 🐾 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="回到最上面" onclick="scrollToTop()">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Sweet, authentic kitten sound synthesizer (Web Audio API)
+    function playCuteKittenSound() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        
+        // Multi-frequency kitten meow curve (high pitch, ultra soft and cute)
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        
+        osc.type = 'sine';
+        const now = ctx.currentTime;
+        
+        // Sweet baby kitten pitch envelope (650Hz -> 980Hz -> 520Hz)
+        osc.frequency.setValueAtTime(650, now);
+        osc.frequency.exponentialRampToValueAtTime(980, now + 0.14);
+        osc.frequency.exponentialRampToValueAtTime(520, now + 0.44);
+        
+        // Gentle volume envelope with cute smooth fade
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.linearRampToValueAtTime(0.25, now + 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.44);
+        
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        
+        osc.start(now);
+        osc.stop(now + 0.45);
+      } catch (err) {
+        console.log("Audio not supported or blocked", err);
+      }
+    }
+
+    // Play happy purr & chirp sound when fed
+    function playPurrSound() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        const now = ctx.currentTime;
+        
+        // Low warm purring tone
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(140, now);
+        osc.frequency.linearRampToValueAtTime(220, now + 0.2);
+        osc.frequency.linearRampToValueAtTime(160, now + 0.5);
+
+        gain.gain.setValueAtTime(0.01, now);
+        gain.gain.linearRampToValueAtTime(0.3, now + 0.1);
+        gain.gain.linearRampToValueAtTime(0.001, now + 0.5);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } catch (e) {}
+    }
+
+    // Dynamic Eye Tracking for the Cute Cat
+    document.addEventListener('mousemove', (e) => {
+      const catBox = document.getElementById('floatingCat');
+      if (!catBox) return;
+      const rect = catBox.getBoundingClientRect();
+      const catCenterX = rect.left + rect.width / 2;
+      const catCenterY = rect.top + rect.height / 2;
+
+      const angle = Math.atan2(e.clientY - catCenterY, e.clientX - catCenterX);
+      const distance = Math.min(2.5, Math.hypot(e.clientX - catCenterX, e.clientY - catCenterY) / 60);
+
+      const offsetX = Math.cos(angle) * distance;
+      const offsetY = Math.sin(angle) * distance;
+
+      const pupilLeft = document.querySelector('.cat-pupil-left');
+      const pupilRight = document.querySelector('.cat-pupil-right');
+
+      if (pupilLeft && pupilRight) {
+        pupilLeft.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+        pupilRight.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+      }
+    });
+
+    // Petting Logic
+    let petCount = parseInt(localStorage.getItem('hlps_cat_pets') || '26', 10);
+    const counterDisplay = document.getElementById('petCounterDisplay');
+    if (counterDisplay) counterDisplay.innerText = petCount;
+
+    const catPetQuotes = [
+      "喵嗚～摸摸好酥胡！(=^･ω･^=)♡",
+      "呼嚕呼嚕～最愛六甲大家庭了！🐾",
+      "喵～蹭蹭你！今天考試一百分！✨",
+      "嗷嗚～作業寫完記得到走廊找我玩～💖",
+      "澎湖的海風好溫暖喵～🐟",
+      "喵嗚！記得多喝水、多運動喔！🏃",
+      "六年甲班最棒、最團結了！🐱✨"
+    ];
+
+    function petTheCat(e) {
+      petCount++;
+      if (counterDisplay) counterDisplay.innerText = petCount;
+      localStorage.setItem('hlps_cat_pets', petCount);
+
+      // Play soft kitten sound
+      playCuteKittenSound();
+
+      // Change speech text
+      const bubble = document.getElementById('companionBubble');
+      if (bubble) {
+        const randomQuote = catPetQuotes[Math.floor(Math.random() * catPetQuotes.length)];
+        bubble.innerText = randomQuote;
+      }
+
+      // Spawn burst of sparkles/hearts
+      const clickX = e.clientX || 100;
+      const clickY = e.clientY || (window.innerHeight - 80);
+      spawnSparkle(clickX, clickY);
+    }
+
+    // Feeding Fish Action
+    function feedFish(e) {
+      petCount += 5;
+      if (counterDisplay) counterDisplay.innerText = petCount;
+      localStorage.setItem('hlps_cat_pets', petCount);
+
+      playPurrSound();
+
+      const bubble = document.getElementById('companionBubble');
+      if (bubble) {
+        bubble.innerText = "嗷嗚～！謝謝小魚乾！橘寶活力滿滿～！🐟♡";
+      }
+
+      for (let i = 0; i < 4; i++) {
+        setTimeout(() => {
+          spawnSparkle(e.clientX + (Math.random() - 0.5) * 60, e.clientY - 20, ['🐟', '💖', '✨', '😻'][i]);
+        }, i * 150);
+      }
+    }
+
+    function spawnSparkle(x, y, customSymbol) {
+      const el = document.createElement('div');
+      el.className = 'floating-sparkle';
+      const symbols = ['❤️', '🐾', '✨', '💖', '😻', '🌸'];
+      el.innerText = customSymbol || symbols[Math.floor(Math.random() * symbols.length)];
+      
+      const offsetX = (Math.random() - 0.5) * 50;
+      el.style.left = `${Math.max(20, x + offsetX - 15)}px`;
+      el.style.top = `${y - 30}px`;
+
+      document.body.appendChild(el);
+
+      setTimeout(() => {
+        el.remove();
+      }, 1200);
+    }
+
+    // Mobile Navigation Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-nav');
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
+    }
+
+    // Copy Page URL Function
+    function copyPageUrl() {
+      const dummy = document.createElement('input');
+      const text = window.location.href;
+      document.body.appendChild(dummy);
+      dummy.value = text;
+      dummy.select();
+      document.execCommand('copy');
+      document.body.removeChild(dummy);
+      alert('🐾 已成功複製班級網站網址！可直接傳給家長或同學分享囉喵～');
+    }
+
+    // Scroll to Top
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Smooth Scroll for Anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
